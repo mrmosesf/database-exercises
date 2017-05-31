@@ -11,9 +11,9 @@ SELECT release_date AS 'The year Sgt. Pepper''s Lonely Hearts Club Band was rele
 FROM albums
 WHERE name = 'Sgt. Pepper''s Lonely Hearts Club Band';
 
-SELECT genre AS 'Nirvana''s genre'
+SELECT genre AS 'Neverminds''s genre'
 FROM albums
-WHERE artist = 'Nirvana';
+WHERE name = 'Nevermind';
 
 SELECT name AS 'Albums released in the 90''s'
 FROM albums
