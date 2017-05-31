@@ -26,3 +26,4 @@ WHERE sales < 20;
 SELECT name AS 'All albums that are ONLY rock'
 FROM albums
 WHERE genre = 'rock';
+# This will only give albums that are just rock, not rock, and pop, or any combination thereof
