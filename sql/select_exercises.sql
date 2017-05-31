@@ -11,7 +11,7 @@ SELECT release_date AS 'The year Sgt. Pepper''s Lonely Hearts Club Band was rele
 FROM albums
 WHERE name = 'Sgt. Pepper''s Lonely Hearts Club Band';
 
-SELECT genre AS 'Neverminds''s genre'
+SELECT genre AS 'Nevermind''s genre'
 FROM albums
 WHERE name = 'Nevermind';
 
@@ -27,3 +27,4 @@ SELECT name AS 'All albums that are ONLY rock'
 FROM albums
 WHERE genre = 'rock';
 # This will only give albums that are just rock, not rock, and pop, or any combination thereof
+# where genre like '%rock%' Would give any album that includes a type of rock
