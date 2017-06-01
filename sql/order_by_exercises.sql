@@ -5,7 +5,7 @@ SELECT *
 FROM employees
 WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
       AND gender = 'M'
-ORDER BY first_name, last_name;
+ORDER BY last_name, first_name;
 
 # Employees whose last name starts with 'E' — 7,330 rows.
 SELECT *
