@@ -31,7 +31,8 @@ WHERE birth_date LIKE '%-12-25';
 # Employees born on Christmas and hired in the 90s - 362 rows
 SELECT *
 FROM employees
-WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN date_format('1990-01-01', '%Y-%m-01') AND LAST_DAY('1999-12-01');
+WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN date_format('1990-01-01', '%Y-%m-01') AND LAST_DAY('1999-12-01')
+ORDER BY birth_date ASC, hire_date DESC;
 
 # Employees with a 'q' in their last name — 1,873 rows.
 SELECT *
