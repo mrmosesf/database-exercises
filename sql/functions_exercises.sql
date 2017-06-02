@@ -39,6 +39,7 @@ FROM employees
 WHERE last_name LIKE '%q%';
 
 # All employees with a 'q' in their last name but not 'qu' — 547 rows.
-SELECT *
+SELECT count(*), first_name, last_name
 FROM employees
-WHERE last_name LIKE '%q%' AND NOT last_name LIKE '%qu%';
+WHERE last_name LIKE '%q%' AND NOT last_name LIKE '%qu%'
+GROUP BY first_name;
