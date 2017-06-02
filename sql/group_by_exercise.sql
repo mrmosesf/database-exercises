@@ -1,4 +1,4 @@
 USE employees;
 
 SELECT DISTINCT titles.title
-FROM titles;
+FROM titles ORDER BY title;
