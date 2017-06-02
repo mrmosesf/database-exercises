@@ -1,7 +1,9 @@
 USE employees;
 
 # Employees with first names 'Irena', 'Vidya', or 'Maya', grouped by their gender
-SELECT count(*), gender
+SELECT
+  count(*),
+  gender
 FROM employees
 WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
 GROUP BY gender;
@@ -12,8 +14,8 @@ FROM employees
 WHERE last_name LIKE 'E%' OR last_name LIKE '%E'
 ORDER BY emp_no DESC;
 
-# All employees whose last name starts and ends with 'E'
-SELECT concat(first_name, ' ', last_name)
+# All employees whose last name starts and ends with 'E', and their names concatenated
+SELECT concat(first_name, ' ', last_name) AS full_name -- Which renames the data on query output
 FROM employees
 WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
 
@@ -28,7 +30,9 @@ FROM employees
 WHERE birth_date LIKE '%-12-25';
 
 # How many days employees born on Christmas and hired in the 90s have been working at the company
-SELECT concat(datediff(curdate(), hire_date), ' days since hired')
+SELECT
+  concat(first_name, ' ', last_name) AS 'full_name',
+  datediff(curdate(), hire_date)     AS 'days since hired'
 FROM employees
 WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN date_format('1990-01-01', '%Y-%m-01') AND LAST_DAY('1999-12-01')
 ORDER BY birth_date ASC, hire_date DESC;
@@ -39,7 +43,10 @@ FROM employees
 WHERE last_name LIKE '%q%';
 
 # All employees with a 'q' in their last name but not 'qu' — 547 rows.
-SELECT count(*), first_name, last_name
+SELECT
+  count(*),
+  concat(first_name, ' ', last_name) AS 'full name'
 FROM employees
 WHERE last_name LIKE '%q%' AND NOT last_name LIKE '%qu%'
-GROUP BY first_name;
+GROUP BY first_name
+ORDER BY count(*) DESC;
